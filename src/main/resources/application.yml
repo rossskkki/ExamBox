@@ -1,0 +1,39 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+  datasource:
+    driver-class-name: ${siki.datasource.driver-class-name}
+    url: jdbc:mysql://${siki.datasource.host}:${siki.datasource.port}/${siki.datasource.database}?serverTimezone=UTC&characterEncoding=utf-8
+    username: ${siki.datasource.username}
+    password: ${siki.datasource.password}
+  elasticsearch:
+    uris: http://${siki.datasource.es.host}:${siki.datasource.es.port}
+    username: ${siki.datasource.es.username}
+
+logging:
+  level:
+    # 输出es的查询参数(调试用)
+    tracer: TRACE
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+file:
+  upload-dir: fornt\\public\\upload-files
+
+langchain4j:
+  open-ai:
+    chat-model:
+      base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
+      api-key: ${siki.langchain4j.api-key}
+      model-name: qwen-plus
+      log-requests: true
+      log-responses: true
