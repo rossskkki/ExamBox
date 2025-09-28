@@ -1,8 +1,13 @@
-一个简单的备考小助手
+**Manual Question Upload**
 
-  手动上传题目
+Upload individual questions manually for practice.
 
-  上传试卷
-    通过大模型解析题目并上传
-  
-  文字搜题
+**Exam Paper Upload**
+
+Upload entire exam papers. The system leverages a large language model (LLM) to automatically parse and organize the questions.
+
+**Text-based Question Search**
+
+Search for questions directly by entering text queries.
+
+Main tech stack: **SpringBoot, Vue, Langchain4j, ElasticSearch**
